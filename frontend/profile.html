@@ -1,0 +1,172 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Profil - Instakill</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+</head>
+<body class="app-body">
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="sidebar-logo">INSTAKILL</div>
+      <nav class="sidebar-nav">
+        <a href="index.html" class="nav-item ">
+          <i class="fa-solid fa-house"></i>
+          <span>Accueil</span>
+        </a>
+        <a href="search.html" class="nav-item ">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <span>Rechercher</span>
+        </a>
+        <a href="create.html" class="nav-item">
+          <i class="fa-solid fa-plus"></i>
+          <span>Créer</span>
+        </a>
+        <a href="notifications.html" class="nav-item">
+          <i class="fa-regular fa-heart"></i>
+          <span>Notifications</span>
+        </a>
+        <a href="profile.html" class="nav-item nav-item-active">
+          <i class="fa-regular fa-user"></i>
+          <span>Profil</span>
+        </a>
+      </nav>
+    </aside>
+
+    <div class="main-area">
+      <header class="topbar">
+        <div class="topbar-search-wrapper">
+          <input
+            type="text"
+            class="topbar-search"
+            placeholder="Rechercher"
+            disabled
+          />
+        </div>
+        <div class="topbar-actions">
+          <button id="logoutBtn" class="icon-btn">
+            <i class="fa-solid fa-right-from-bracket"></i>
+          </button>
+        </div>
+      </header>
+
+      <main class="content">
+        <section class="profile-header card">
+          <div class="profile-avatar-wrapper">
+            <img id="profileAvatar" class="profile-avatar" src="" alt="avatar" />
+          </div>
+          <div class="profile-main">
+            <div class="profile-row-username">
+              <span id="profileUsername" class="profile-username">@username</span>
+              <button id="openEditProfile" class="profile-edit-btn">Modifier le profil</button>
+            </div>
+            <div class="profile-stats">
+              <div><span id="profilePostsCount">0</span> posts</div>
+              <div><span id="profileFollowers">0</span> followers</div>
+              <div><span id="profileFollowing">0</span> following</div>
+            </div>
+            <div class="profile-bio">
+              <strong id="profileFullName">Nom complet</strong>
+              <p id="profileBio">Bienvenue sur ton profil Instakill ✨</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="profile-stories card">
+          <div id="storiesRow" class="stories-row">
+            <div id="addStoryBubble" class="story-bubble" style="cursor:pointer;">
+              <div class="story-avatar story-avatar-outline"><span>+</span></div>
+              <p>New</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="profile-grid card">
+          <div class="profile-grid-tabs">
+            <button class="profile-grid-tab profile-grid-tab-active">
+              <i class="fa-solid fa-table-cells"></i>
+            </button>
+            <button class="profile-grid-tab" disabled>
+              <i class="fa-regular fa-bookmark"></i>
+            </button>
+          </div>
+          <div id="profileGrid" class="profile-grid-container">
+            <!-- Photos du profil chargées en JS -->
+          </div>
+        </section>
+      </main>
+</div>
+</div>
+
+  <script type="module" src="js/profile.js"></script>
+</body>
+<div id="editProfileModal" class="modal">
+  <div class="modal-content">
+    <button id="closeEditProfile" class="modal-close">&times;</button>
+    <div class="modal-body" style="padding:16px;">
+      <div style="flex:1;">
+        <h3 style="margin:0 0 12px 0;">Modifier le profil</h3>
+        <form id="editProfileForm" class="create-form">
+          <label>
+            Nom complet
+            <input type="text" id="editFullName" placeholder="Nom complet" />
+          </label>
+          <label>
+            Bio
+            <textarea id="editBio" rows="3" placeholder="À propos de toi"></textarea>
+          </label>
+          <label>
+            URL de l'avatar
+            <input type="text" id="editAvatarUrl" placeholder="https://..." />
+          </label>
+          <button type="submit" class="primary-btn">Enregistrer</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="createStoryModal" class="modal">
+  <div class="modal-content">
+    <button id="closeCreateStory" class="modal-close">&times;</button>
+    <div class="modal-body" style="padding:16px;">
+      <div style="flex:1;">
+        <h3 style="margin:0 0 12px 0;">Nouvelle story</h3>
+        <form id="createStoryForm" class="create-form">
+          <label>
+            Titre
+            <input type="text" id="storyTitle" placeholder="Titre (optionnel)" />
+          </label>
+          <label>
+            URL de l'image
+            <input type="text" id="storyImageUrl" placeholder="https://..." />
+          </label>
+          <label>
+            URL de la vidéo (optionnel)
+            <input type="text" id="storyVideoUrl" placeholder="https://..." />
+          </label>
+          <button type="submit" class="primary-btn">Publier</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="viewStoryModal" class="modal">
+  <div class="modal-content">
+    <button id="closeViewStory" class="modal-close">&times;</button>
+    <div class="modal-body">
+      <div class="modal-image-wrapper"><img id="viewStoryImg" src="" alt="Story" /></div>
+      <div class="modal-side">
+        <div class="modal-header" id="viewStoryTitle"></div>
+      </div>
+    </div>
+  </div>
+</div>
+</html>

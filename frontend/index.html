@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Instakill - Accueil</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+</head>
+<body class="app-body">
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="sidebar-logo">INSTAKILL</div>
+      <nav class="sidebar-nav">
+        <a href="index.html" class="nav-item nav-item-active">
+          <i class="fa-solid fa-house"></i>
+          <span>Accueil</span>
+        </a>
+        <a href="search.html" class="nav-item">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <span>Rechercher</span>
+        </a>
+        <a href="create.html" class="nav-item">
+          <i class="fa-solid fa-plus"></i>
+          <span>Créer</span>
+        </a>
+        <a href="notifications.html" class="nav-item">
+          <i class="fa-regular fa-heart"></i>
+          <span>Notifications</span>
+        </a>
+        <a href="profile.html" class="nav-item">
+          <i class="fa-regular fa-user"></i>
+          <span>Profil</span>
+        </a>
+      </nav>
+    </aside>
+
+    <div class="main-area">
+      <header class="topbar">
+        <div class="topbar-search-wrapper">
+          <input
+            type="text"
+            id="search"
+            class="topbar-search"
+            placeholder="Recherche"
+          />
+        </div>
+        <div class="topbar-actions">
+          <button id="logoutBtn" class="icon-btn" title="Se déconnecter">
+            <i class="fa-solid fa-right-from-bracket"></i>
+          </button>
+        </div>
+      </header>
+
+      <main class="content">
+        <section class="welcome-card">
+          <div>
+            <h2>Hello, <span id="welcomeName"></span></h2>
+            <p>Bienvenue sur INSTAKILL 👋</p>
+          </div>
+          <div class="welcome-avatar">
+            <span class="welcome-emoji">😊</span>
+          </div>
+        </section>
+
+        <section class="stories-row">
+          <div class="story">
+            <div class="story-circle"></div>
+            <span>Moi</span>
+          </div>
+          <div class="story">
+            <div class="story-circle"></div>
+            <span>Alex</span>
+          </div>
+          <div class="story">
+            <div class="story-circle"></div>
+            <span>Sarah</span>
+          </div>
+          <div class="story">
+            <div class="story-circle"></div>
+            <span>John</span>
+          </div>
+        </section>
+
+        <section id="photoGrid" class="feed-grid"></section>
+      </main>
+    </div>
+  </div>
+
+  <div id="photoModal" class="modal">
+    <div class="modal-content">
+      <button id="closeModal" class="modal-close">&times;</button>
+      <div class="modal-body">
+        <div class="modal-image-wrapper">
+          <img id="modalImg" src="" alt="Photo" />
+        </div>
+        <div class="modal-side">
+          <button id="deleteModalPhoto" class="modal-delete" title="Supprimer">🗑️</button>
+          <div class="modal-header">
+            <span id="modalAuthor" class="modal-author"></span>
+          </div>
+          <div class="modal-actions">
+            <i id="modalLikeIcon" class="fa-regular fa-heart"></i>
+            <span id="modalLikes">0</span> likes
+          </div>
+          <div id="modalComments" class="modal-comments"></div>
+          <div class="modal-add-comment">
+            <input type="text" id="newComment" placeholder="Ajouter un commentaire…" />
+            <button id="sendComment">Publier</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

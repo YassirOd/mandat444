@@ -1,0 +1,506 @@
+/* GLOBAL */
+body {
+  margin: 0;
+  font-family: "Open Sans", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #f4f2ff;
+}
+
+/* ---------- NAVBAR ---------- */
+
+.insta-nav {
+  background: #ffffff;
+  border-bottom: 1px solid #e0ddff;
+  padding: 12px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.brand-title {
+  font-size: 28px;
+  font-weight: 800;
+  margin: 0;
+  letter-spacing: 1px;
+  color: #4c3cff;
+}
+
+.nav-logo-img {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* centre */
+.nav-center input {
+  background: #f4f2ff;
+  border: 1px solid #dad7ff;
+  padding: 8px 14px;
+  width: 280px;
+  border-radius: 999px;
+  text-align: center;
+  outline: none;
+  transition: 0.2s;
+}
+
+.nav-center input:focus {
+  border-color: #7e6bff;
+  box-shadow: 0 0 0 2px #e2ddff;
+}
+
+.nav-right i {
+  font-size: 22px;
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+.logout-btn {
+  background: #ff3c7f;
+  border: none;
+  padding: 7px 14px;
+  border-radius: 999px;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* ---------- HEADER "HELLO" ---------- */
+
+.hello-header {
+  max-width: 640px;
+  margin: 20px auto 0;
+  padding: 16px 18px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #f5ebff, #d9d1ff);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hello-text-main {
+  font-size: 20px;
+  font-weight: 700;
+  color: #4c3cff;
+}
+
+.hello-text-sub {
+  font-size: 13px;
+  color: #5b5b7a;
+}
+
+.hello-avatar {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: url("https://api.dicebear.com/8.x/thumbs/svg?seed=instakill") center/cover no-repeat;
+}
+
+/* ---------- STORIES ---------- */
+
+.stories {
+  max-width: 640px;
+  margin: 12px auto;
+  display: flex;
+  gap: 18px;
+  padding: 8px 4px 0;
+  overflow-x: auto;
+}
+
+.story {
+  text-align: center;
+  font-size: 12px;
+  color: #444;
+}
+
+.story-img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4, #a18cd1);
+  padding: 3px;
+  margin-bottom: 6px;
+}
+
+.story-img::after {
+  content: "";
+  display: block;
+  width: 64px;
+  height: 64px;
+  background: #fff;
+  border-radius: 50%;
+  margin: auto;
+}
+
+/* ---------- FEED CONTAINER ---------- */
+
+.feed-container {
+  max-width: 640px;
+  margin: 10px auto 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* ---------- POST (CARD) ---------- */
+
+.post {
+  background: #fff;
+  border-radius: 18px;
+  border: 1px solid #e1ddff;
+  box-shadow: 0 14px 34px rgba(76, 60, 255, 0.09);
+  overflow: hidden;
+}
+
+/* Header du post */
+.post-header {
+  display: flex;
+  align-items: center;
+  padding: 10px 12px;
+  gap: 10px;
+}
+
+.post-header i {
+  font-size: 32px;
+  color: #7e6bff;
+}
+
+.post-header span {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* Image */
+.post-img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+/* Actions (like / comment / share) */
+.post-actions {
+  padding: 8px 12px;
+  font-size: 21px;
+  display: flex;
+  gap: 14px;
+}
+
+.post-actions i {
+  cursor: pointer;
+}
+
+/* Like icon rouge */
+.post-like.liked,
+#modalLikeIcon.liked {
+  color: #ff2851;
+}
+
+/* Likes + description */
+.post-likes {
+  padding: 0 12px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.post-desc {
+  padding: 4px 12px 10px;
+  font-size: 14px;
+  color: #333;
+}
+
+/* Comments sous le post */
+.post-comments {
+  padding: 0 12px 8px;
+  font-size: 13px;
+  color: #555;
+}
+
+
+.post-comments p {
+  margin: 2px 0;
+}
+
+/* Ajout de commentaire sous le post */
+.post-add-comment {
+  padding: 6px 12px 12px;
+  display: flex;
+  gap: 8px;
+  border-top: 1px solid #f0edff;
+}
+
+.post-add-comment input {
+  flex: 1;
+  border-radius: 999px;
+  border: 1px solid #e0ddff;
+  padding: 6px 10px;
+  font-size: 13px;
+}
+
+.post-add-comment button {
+  border-radius: 999px;
+  border: none;
+  padding: 6px 10px;
+  background: #7e6bff;
+  color: white;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+/* ---------- MODAL ---------- */
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+  z-index: 1000;
+}
+
+.modal-content {
+  display: flex;
+  max-width: 960px;
+  width: 100%;
+  max-height: 90vh;
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+}
+
+.modal-left {
+  flex: 3;
+  background: #000;
+}
+
+.modal-left img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.modal-right {
+  flex: 2;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.close {
+  position: absolute;
+  right: 16px;
+  top: 8px;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.profile-icon {
+  font-size: 26px;
+  color: #7e6bff;
+}
+
+.modal-actions {
+  margin-bottom: 10px;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.modal-comments {
+  flex: 1;
+  overflow-y: auto;
+  margin-bottom: 10px;
+}
+
+.modal-comments p {
+  font-size: 13px;
+  background: #f4f2ff;
+  padding: 6px 8px;
+  border-radius: 8px;
+  margin-bottom: 6px;
+}
+
+.modal-add-comment {
+  display: flex;
+  gap: 8px;
+}
+
+.modal-add-comment textarea {
+  flex: 1;
+  border-radius: 10px;
+  border: 1px solid #e1ddff;
+  padding: 6px 8px;
+  font-size: 13px;
+  resize: none;
+}
+
+.modal-add-comment button {
+  border-radius: 10px;
+  border: none;
+  padding: 6px 10px;
+  background: #7e6bff;
+  color: white;
+  cursor: pointer;
+}
+
+/* ---------- RESPONSIVE ---------- */
+
+@media (max-width: 900px) {
+  .insta-nav {
+    padding: 10px 12px;
+  }
+
+  .nav-center input {
+    width: 160px;
+  }
+
+  .stories {
+    padding: 10px 12px 0;
+  }
+
+  .feed-container {
+    margin-top: 10px;
+    padding: 0 8px;
+  }
+
+  .modal-content {
+    flex-direction: column;
+  }
+
+  .modal-left {
+    flex: none;
+    height: 50vh;
+  }
+
+  .modal-right {
+    flex: none;
+    height: 40vh;
+  }
+}
+
+@media (max-width: 600px) {
+  .brand-title {
+    font-size: 22px;
+  }
+
+  .nav-center {
+    display: none; /* plus d’espace sur mobile */
+  }
+
+  .feed-container {
+    max-width: 100%;
+  }
+}
+
+.nav-logo-img {
+  height: 100px;        /* Taille du logo */
+  width: auto;
+  object-fit: contain;
+  display: block;
+  padding: 0;
+  margin: -10px 0;     /* Remonte l’image */
+}
+
+/* ADD BUTTON — rond violet */
+.bottom-add {
+  width: 48px !important;
+  height: 48px;
+  background: #7e6bff;
+  border-radius: 14px;
+  color: white;
+  font-size: 24px;
+  box-shadow: 0 8px 20px rgba(76, 60, 255, 0.3);
+}
+
+.bottom-add:hover {
+  transform: scale(1.2);
+  background: #6d5aff;
+}
+
+/* NAVBAR CLEAN */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.nav-heart {
+  font-size: 24px;
+  cursor: pointer;
+  transition: 0.2s;
+  color: #7e6bff;
+}
+
+.nav-heart:hover {
+  transform: scale(1.15);
+  color: #4c3cff;
+}
+
+.logout-icon {
+  font-size: 22px;
+  color: #ff3c7f;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.logout-icon:hover {
+  transform: scale(1.2);
+  color: #ff1e5f;
+}
+/* SIDEBAR GAUCHE */
+.side-nav {
+  position: fixed;
+  left: 0;
+  top: 80px;
+  width: 220px;
+  height: 100vh;
+  background: #ffffff;
+  border-right: 1px solid #e0ddff;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 999;
+  box-shadow: 4px 0 25px rgba(76, 60, 255, 0.05);
+}
+
+.side-item {
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 16px;
+  color: #6d5aff;
+  cursor: pointer;
+  border-radius: 12px;
+  transition: 0.25s;
+}
+
+.side-item:hover {
+  background: #f2efff;
+  color: #4c3cff;
+}
+
+.side-item i {
+  font-size: 20px;
+}
+
+.side-item.active {
+  background: #e9e5ff;
+  color: #4c3cff;
+  font-weight: 700;
+}
+

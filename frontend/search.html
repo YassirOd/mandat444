@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Rechercher - Instakill</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
+</head>
+
+<body class="app-body">
+  <div class="app-shell">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="sidebar-logo">INSTAKILL</div>
+      <nav class="sidebar-nav">
+        <a href="index.html" class="nav-item">
+          <i class="fa-solid fa-house"></i> <span>Accueil</span>
+        </a>
+        <a href="search.html" class="nav-item nav-item-active">
+          <i class="fa-solid fa-magnifying-glass"></i> <span>Rechercher</span>
+        </a>
+        <a href="create.html" class="nav-item">
+          <i class="fa-solid fa-plus"></i> <span>Créer</span>
+        </a>
+        <a href="notifications.html" class="nav-item">
+          <i class="fa-regular fa-heart"></i> <span>Notifications</span>
+        </a>
+        <a href="profile.html" class="nav-item">
+          <i class="fa-regular fa-user"></i> <span>Profil</span>
+        </a>
+      </nav>
+    </aside>
+
+
+    <div class="main-area">
+
+      <!-- TOPBAR -->
+      <header class="topbar">
+        <div class="topbar-search-wrapper">
+          <input
+            type="text"
+            id="searchInput"
+            class="topbar-search"
+            placeholder="Rechercher une photo..."
+          />
+        </div>
+        <div class="topbar-actions">
+          <button id="logoutBtn" class="icon-btn">
+            <i class="fa-solid fa-right-from-bracket"></i>
+          </button>
+        </div>
+      </header>
+
+      
+      <main class="content">
+
+        <section class="card">
+          <h2>Recherche</h2>
+          <p>Résultats mis à jour automatiquement.</p>
+        </section>
+
+        <section id="resultsGrid" class="feed-grid"></section>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- MODAL -->
+  <div id="photoModal" class="modal">
+    <div class="modal-content">
+      <button id="closeModal" class="modal-close">&times;</button>
+      <div class="modal-body">
+        <div class="modal-image-wrapper">
+          <img id="modalImg" src="" />
+        </div>
+        <div class="modal-side">
+          <div class="modal-header">
+            <span id="modalAuthor"></span>
+          </div>
+          <div class="modal-actions">
+            <i id="modalLikeIcon" class="fa-regular fa-heart"></i>
+            <span id="modalLikes">0</span> likes
+          </div>
+          <div id="modalComments" class="modal-comments"></div>
+          <div class="modal-add-comment">
+            <input id="newComment" type="text" placeholder="Ajouter un commentaire…" />
+            <button id="sendComment">Publier</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="js/search.js"></script>
+
+</body>
+</html>
